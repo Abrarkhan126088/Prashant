@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -34,30 +35,36 @@ public static void main(String[] args) throws IOException {
 String Source = driver.getPageSource();
  //System.out.println(Source);
 
+// GET TExt
+
+String text = driver.findElement(By.xpath("//a[@class='nav-a  ']")).getText();
+
+System.out.println(text);
+
 //Nvaigate
 
-driver.navigate().forward();
+//driver.navigate().forward();
   
-driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']")).sendKeys("iPhone");
+driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']")).sendKeys("iPhone" + Keys.ENTER);
 
-Dimension d = new Dimension(200,300);
+//Dimension d = new Dimension(200,300);
 
-driver.manage().window().setSize(d);
+//driver.manage().window().setSize(d);
 
-      Dimension size = driver.manage().window().getSize();
- System.out.println(size);
+  //    Dimension size = driver.manage().window().getSize();
+ //System.out.println(size);
 
  // Screenshot
  
- String path = "C:\\Users\\USER\\Documents\\GitHub\\Prashant\\SeleniumGit\\Screenshot";
+ //String path = "C:\\Users\\USER\\Documents\\GitHub\\Prashant\\SeleniumGit\\Screenshot";
  
- TakesScreenshot ts = (TakesScreenshot)driver;
+ //TakesScreenshot ts = (TakesScreenshot)driver;
  
- File src = ts.getScreenshotAs(OutputType.FILE);
+// File src = ts.getScreenshotAs(OutputType.FILE);
  
-  File des = new File(path + "ss1.png");
+ // File des = new File(path + "ss1.png");
  
- FileHandler.copy(src, des);
+// FileHandler.copy(src, des);
  
  
  
